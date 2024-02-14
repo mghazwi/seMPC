@@ -6,3 +6,16 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+ark-mpc = { git = "https://github.com/renegade-fi/ark-mpc" }
+mpc-plonk = { git = "https://github.com/renegade-fi/mpc-jellyfish.git", features = ["default","test_apis", "all-tests", "test-srs"] }
+mpc-relation = { git = "https://github.com/renegade-fi/mpc-jellyfish.git" }
+jf-primitives = { git = "https://github.com/renegade-fi/mpc-jellyfish.git" }
+criterion = { version = "0.5", features = ["async", "async_tokio"] }
+tokio = { version = "1" }
+rand = "0.8"
+
+# Benchmarks
+[[bench]]
+name = "plonk-benches"
+path = "benches/bench.rs"
+harness = false
